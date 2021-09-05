@@ -13,19 +13,35 @@ cursor = connection.cursor()
 # cursor.execute('SELECT "Name" FROM "Artist"')
 
 # query 3 - select only the "Queen" column from the "Artist" table
-cursor.execute('SELECT * FROM "Artist" WHERE "Name" = %s', ["Queen"])
+# cursor.execute('SELECT * FROM "Artist" WHERE "Name" = %s', ["Queen"])
 
 # query 3 - select only the "Queen" column from the "Artist" table
-cursor.execute('SELECT * FROM "Artist" WHERE "ArtistId" = %s', ["51"])
+# cursor.execute('SELECT * FROM "Artist" WHERE "ArtistId" = %s', ["51"])
 
 # query 4 - select only by "ArtistId" #51 from the "Artist" table
-cursor.execute('SELECT * FROM "Artist" WHERE "Name" = %s', ["Queen"])
+# cursor.execute('SELECT * FROM "Artist" WHERE "Name" = %s', ["Queen"])
 
 # query 5 - select only the albums with "ArtistId" #51 column from the "Artist" column
-cursor.execute('SELECT * FROM "Album" WHERE "ArtistId" = %s', ["51"])
+# cursor.execute('SELECT * FROM "Album" WHERE "ArtistId" = %s', ["51"])
 
 # query 6 - select all tracks where the composer is "Queen" from the "Track" table
-cursor.execute('SELECT * FROM "Track" WHERE "Composer" = %s', ["Queen"])
+# cursor.execute('SELECT * FROM "Track" WHERE "Composer" = %s', ["Queen"])
+
+# query 7 - select only the REM column from the "Artist" table
+# cursor.execute('SELECT * FROM "Artist" WHERE "Name" = %s', ["R.E.M."])
+
+# query 8 - select only by "ArtistId" #124 from the "Artist" table
+# cursor.execute('SELECT * FROM "Artist" WHERE "Name" = %s', ["R.E.M."])
+
+# query 9 - select only the albums with "ArtistId" #124 column from the "Artist" column
+# cursor.execute('SELECT * FROM "Album" WHERE "ArtistId" = %s', ["124"])
+
+# query 10 - select all tracks where the composer is "Queen" from the "Track" table
+# cursor.execute('SELECT * FROM "Track" WHERE "Composer" = %s', ["R.E.M."])
+
+# query 11 - select all tracks where the composer is "test" from the "Track" table
+# cursor.execute('SELECT * FROM "Track" WHERE "Composer" = %s', ["test"])
+
 
 # fetch the results (multiple)
 results = cursor.fetchall()
