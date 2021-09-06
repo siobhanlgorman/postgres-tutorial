@@ -7,7 +7,10 @@ db = create_engine("postgresql:///chinook")
 
 meta = MetaData(db)
 
+# construct tables
+# create variables for table  / table classes or models
 # create variable for "Artist" table
+# specify name of table and meta schema
 artist_table = Table(
     "Artist", meta,
     Column("ArtistId", Integer, primary_key=True),
