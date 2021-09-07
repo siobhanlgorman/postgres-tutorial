@@ -48,7 +48,6 @@ cambodia = Favourite_Countries(
 # session.commit()
 
 # update mulitple records
-
 name = input("Enter record name: ")
 favourite_countries = session.query(Favourite_Countries).filter_by(country_name=name).first()
 # defensive programming
