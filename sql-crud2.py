@@ -59,7 +59,7 @@ if favourite_countries is not None:
         session.commit()
         print("Country has been deleted")
 else:
-    print 
+    print
     ("No records found")
 
 # query the database to find all programmers
@@ -74,3 +74,4 @@ for country in favourite_countries:
         sep=" | "
 
     )
+
