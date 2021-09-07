@@ -20,7 +20,7 @@ class Favourite_Countries(base):
     language = Column(String)
     famous_for = Column(String)
 
-  
+
 # instead of connecting to the database directly, we will ask for a session
 # create a new instance of sessionmaker, then point to our engine (the db)
 Session = sessionmaker(db)
@@ -41,11 +41,27 @@ cambodia = Favourite_Countries(
 
 
 # add each instance of our favourite_countries to our session
-session.add(cambodia)
+# session.add(cambodia)
 
 
 # commit our session to the database
-session.commit()
+# session.commit()
+
+# update mulitple records
+
+name = input("Enter record name: ")
+favourite_countries = session.query(Favourite_Countries).filter_by(country_name=name).first()
+# defensive programming
+if favourite_countries is not None:
+    print("Favourite Country Found: ", favourite_countries.country_name)
+    confirmation = input("Are you sure you want to delete this record? y/n")
+    if confirmation.lower() == "y":
+        session.delete(favourite_countries)
+        session.commit()
+        print("Country has been deleted")
+else:
+    print 
+    ("No records found")
 
 # query the database to find all programmers
 favourite_countries = session.query(Favourite_Countries)
@@ -57,5 +73,5 @@ for country in favourite_countries:
         country.language,
         country.famous_for,
         sep=" | "
-        
+
     )
